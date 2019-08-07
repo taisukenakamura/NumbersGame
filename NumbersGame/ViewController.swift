@@ -35,7 +35,13 @@ class ViewController: UIViewController {
     
     @IBAction func tappedButton(_ sender: Any) {
         //        数値のみだけを処理させて、他のnilやString型を処理させないようにする
-        guard let acceptedNum = Int(textNumber.text!) else {return}
+        guard let acceptedNum = Int(textNumber.text!) else {
+//            数字以外の値が来た時にエラーアラートを表示
+            showAlert(title: "エラー",message: "1~100以内の数値を入力してください")
+
+            return
+            
+        }
         
         //         let acceptedNum = Int(textNumber.text!)!ß ←ゴミコードの残骸
         if 0 < acceptedNum && acceptedNum <= 100{
