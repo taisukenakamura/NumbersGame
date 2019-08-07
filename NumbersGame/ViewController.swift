@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     //    入力した数字を表示するラベルの変数
-    @IBOutlet weak var printScore: UILabel!
+    @IBOutlet weak var printLabel: UILabel!
     //    入力する数字を受け取る変数
-    @IBOutlet weak var textNumber: UITextField!
+    @IBOutlet weak var acceptedNumber: UITextField!
     //    結果を表示する変数
     @IBOutlet weak var resultMessage: UITextView!
     //    乱数を持つ変数を作成
