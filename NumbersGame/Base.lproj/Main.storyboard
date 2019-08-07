@@ -40,6 +40,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-gV-05L">
                                 <rect key="frame" x="144.5" y="194" width="31" height="30"/>
                                 <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BY6-yu-VRX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="？？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-Ga-BiV">
                                 <rect key="frame" x="142.5" y="100" width="35" height="21"/>
@@ -65,9 +68,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="acceptedNumber" destination="Dw2-oH-2EM" id="07h-uG-2Ap"/>
-                        <outlet property="printLabel" destination="OI5-Ga-BiV" id="PJP-e9-Slk"/>
+                        <outlet property="printScore" destination="OI5-Ga-BiV" id="PJP-e9-Slk"/>
                         <outlet property="resultMessage" destination="e01-TP-1nk" id="IMS-TC-pv1"/>
+                        <outlet property="textNumber" destination="Dw2-oH-2EM" id="07h-uG-2Ap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
