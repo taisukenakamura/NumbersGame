@@ -25,11 +25,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // TextViewを編集させない
         // resultMessage.isEditable = false
-        print(randomNum)
+        // print(randomNum)
     }
     
     
@@ -43,34 +42,34 @@ class ViewController: UIViewController {
             
         }
         
-        // let acceptedNum = Int(textNumber.text!)! ←ゴミコードの残骸
-        if 0 < acceptedNum && acceptedNum <= 100{
+       
+        if 0 < acceptedNum && acceptedNum <= 100 {
             // 入力数値　＞　正解数値
-            if acceptedNum > randomNum{
+            if acceptedNum > randomNum {
                 // 現在の回数に　＋１
                 counts += 1
                 // 入力数値をラベルに表示
                 printScore.text = "\(acceptedNum)"
                 // 不正解アラート
-                showAlert(title: "不正解",message: "答えは\(acceptedNum)より低い値です")
+                showAlert(title: "不正解", message: "答えは\(acceptedNum)より低い値です")
                 // 履歴更新
                 resultMessage.text += "[\(counts)回目]答えは\(acceptedNum)より低い値です。\n"
                 // 入力数値　＜　正解数値
-            }else if acceptedNum < randomNum {
+            } else if acceptedNum < randomNum {
                 // 現在の回数に　＋１
                 counts += 1
                 // 入力した数値をラベルに表示
                 printScore.text = "\(acceptedNum)"
                 // 不正解アラート
-                showAlert(title: "不正解",message: "答えは\(acceptedNum)より高い値です")
+                showAlert(title: "不正解", message: "答えは\(acceptedNum)より高い値です")
                 // 履歴更新
                 resultMessage.text += "[\(counts)回目]答えは\(acceptedNum)より高い値です。\n"
                 // 正解した場合
-            }else{
+            } else {
                 // 現在の回数に　＋１
                 counts += 1
                 // 正解アラート
-                showAlert(title: "正解",message: "[\(counts)回目]で正解しました。\n 数字をリセットします")
+                showAlert(title: "正解", message: "[\(counts)回目]で正解しました。\n 数字をリセットします")
                 // 履歴更新
                 resultMessage.text +=  "[\(counts)回目]答えは\(acceptedNum)です \n"
                 // 正解したため、答えの値を更新
@@ -80,16 +79,18 @@ class ViewController: UIViewController {
                 
             }
             // 1~100以外の数字を入力した場合
-        }else{
+        } else {
+            
             showAlert(title: "エラー",message: "1~100以内の数値を入力してください")
-        }
         
-                textNumber.text = ""
+        }
+           // 処理をした後にtextFieldを空欄にする
+            textNumber.text = ""
         
     }
     
     // アラートを表示する、アラート関数
-    func showAlert(title : String,message : String) {
+    func showAlert(title : String, message : String) {
         // アラート表示の生成
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         //アラートからの遷移先を生成
@@ -101,8 +102,10 @@ class ViewController: UIViewController {
     }
     
     // 正解を更新する関数
-    func resetRandomNum(){
+    func resetRandomNum() {
+        
         randomNum = Int(arc4random_uniform(101))
+        
     }
     
     
